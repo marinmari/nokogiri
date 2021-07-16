@@ -23,8 +23,7 @@ def get_townhall_urls
     townhall_url = []
 
     page.xpath('//tr/td/p/a/@href').each do |url|
-        townhall_url.push(url.text)
-        townhall_url.map.to_s.sub(/[.]/ , 'http://annuaire-des-mairies.com/')
+        townhall_url.push(url.text.to_s.sub(/[.]/ , "http://annuaire-des-mairies.com"))
     end
 
     return townhall_url
@@ -32,6 +31,6 @@ end
 
 
 
-print get_townhall_urls
-print get_townhall_email("https://www.annuaire-des-mairies.com/95/avernes.html")
+puts get_townhall_urls
+puts get_townhall_email("https://www.annuaire-des-mairies.com/95/avernes.html")
 puts

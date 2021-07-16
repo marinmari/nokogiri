@@ -27,5 +27,4 @@ def page_reading
 
 end
 
-print page_reading
-puts 
+puts page_reading
